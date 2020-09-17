@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel='stylesheet' href='css\style.css'>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+
+</head>
+
+<body>
+    <div class="alpha">
+        <div class="formbox">
+
+            <form id="login" class="input" onsubmit="return false">
+                <input type="text" id="login_email" class="input-field" placeholder="Used ID" required>
+                <input type="password" id="login_pass" class="input-field" placeholder="Password" required>
+                <button type="submit" class="submit-btn" id="login_sub">Submit</button>
+            </form>
+            <!-- onsubmit="register();return false" -->
+            <form id="register" class="input" onsubmit="return false">
+                <input type="text" id="reg_email" class="input-field" placeholder="Email ID" required>
+                <input type="password" id="reg_pass" class="input-field" placeholder="Password" required>
+                <!-- <input type="text" id="reg_conf_pass" class="input-field" placeholder="Confirm Password" required> -->
+                <button type="submit" class="submit-btn" id="register_sub">Submit</button>
+            </form>
+            <div class="buttonbox">
+                <div id="btn"></div>
+                <button type="button" class="Buttons" onclick="login_animate()">Log In</button>
+                <button type="button" class="Buttons" onclick="register_animate()">Register</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="stories.js"></script>
+    <script src="db.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

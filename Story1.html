@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>Goldilocks and the Three Bears</title>
+    <link rel='stylesheet' href='css\materialize.css'>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+</head>
+
+</html>
+
+<body>
+    <nav class="blue-grey">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">&nbsp;&nbsp;Goldilocks and the Three Bears</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a class="waves-effect waves-light btn" id="signout" onclick="sign_out()">Signout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <p style="margin-bottom:25px;margin-left: 25px;"></p>
+    <div class="row">
+        <div class="col s12 m5" style="width:100%;">
+            <div class="card-panel teal">
+                <span id="FullStory1" class="white-text"> </span>
+            </div>
+        </div>
+    </div>
+    <a href="!#"><span class="teal white-text badge" id="view_count"></span></a>
+    <p></p>
+    <a href="!#"><span class="teal white-text badge">Currently Viewing:</span></a>
+    <script src="stories.js"></script>
+    <script src="main.js"></script>
+    <script src="db.js"></script>
+    <script type="application/javascript">
+
+        function get_viewers_ip(json) {
+            viewers_ip = json.ip;
+            count_view(viewers_ip);
+        }
+        function count_view(viewers_ip) {
+            var views;
+            var ip_to_strig = viewers_ip.toString();
+
+            for (var i, i = 0; i < ip_to_strig.length; i++) {
+                ip_to_strig = ip_to_strig.replace(".", "-");
+            }
+            firebase.database().ref().child("Story1").child("page_views/" + ip_to_strig).set({
+                viewers_ip: viewers_ip
+            });
+            firebase.database().ref().child("Story1").child("page_views").on("value", function (snapshot) {
+                views = snapshot.numChildren();
+                document.getElementById("view_count").innerHTML = views;
+                firebase.database().ref().child("Story1").child("Viewing").set(views);
+            })
+
+        }
+
+
+
+    </script>
+    <script type="application/javascript" src="http://api.ipify.org/?format=jsonp&callback=get_viewers_ip"></script>
+
+</body>

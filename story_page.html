@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Stories</title>
+    <link rel='stylesheet' href='css\materialize.css'>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+</head>
+
+</html>
+
+<body>
+    <nav class="blue-grey">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">&nbsp;&nbsp;Pratilipi Stories Page</a>
+            <ul class="right hide-on-med-and-down">
+                <li><button type="button" class="waves-effect waves-light btn" id="signout"
+                        onclick="sign_out()">Signout</button></li>
+                <!-- <button type="submit" class="waves-effect waves-light btn" id="signout">Signout</button></li> -->
+            </ul>
+        </div>
+    </nav>
+    <p style="margin-bottom:25px;margin-left: 25px;"></p>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span id="Story1Title" class="card-title"></span>
+                    <p id="Story1Short" style="width:600px;"></p>
+                </div>
+                <div class="card-action">
+                    <a href="Story1.html" onclick="increase_views">View Full Story</a>
+                    <a href="!#"><span class="teal white-text badge" id="View1"></span></a>
+                    <a href="!#"><span class="teal white-text badge">Views:</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <p style="margin-bottom:25px;margin-left: 25px;"></p>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span id="Story2Title" class="card-title"></span>
+                    <p id="Story2Short" style="width:600px;"></p>
+                </div>
+                <div class="card-action">
+                    <a href="Story2.html" onclick="increase_views">View Full Story</a>
+                    <a href="!#"><span class="teal white-text badge" id="View2"></span></a>
+                    <a href="!#"><span class="teal white-text badge">Views:</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <p style="margin-bottom:25px;margin-left: 25px;"></p>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span id="Story3Title" class="card-title"></span>
+                    <p id="Story3Short" style="width:600px;"></p>
+                </div>
+                <div class="card-action">
+                    <a href="Story3.html" onclick="increase_views">View Full Story</a>
+                    <a href="!#"><span class="teal white-text badge" id="View3"></span></a>
+                    <a href="!#"><span class="teal white-text badge">Views:</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="stories.js"></script>
+    <script src="main.js"></script>
+</body>
